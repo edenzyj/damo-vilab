@@ -2,6 +2,8 @@ import torch, gc
 from diffusers import DiffusionPipeline, DPMSolverMultistepScheduler
 from diffusers.utils import export_to_video
 
+filename = '/home/zyj/Module-class/damo-vilab/output/test.mp4'
+
 def gen_video(prompt):
     gc.collect()
     torch.cuda.empty_cache()
@@ -12,4 +14,4 @@ def gen_video(prompt):
     pipe.enable_vae_slicing()
 
     video_frames = pipe(prompt, num_inference_steps=25, num_frames=40).frames
-    video_path = export_to_video(video_frames, output_video_path="/home/zyj/Module-class/damo-vilab/output/long.mp4")
+    video_path = export_to_video(video_frames, output_video_path=filename)

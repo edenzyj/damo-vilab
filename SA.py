@@ -19,12 +19,11 @@ def on_register(r):
     print('Server: {}\nDevice name: {}\nRegister successfully.'.format(r['server'], r['d_name']))
 
 have_recieved = [0]
-filename = '/home/zyj/Module-class/damo-vilab/output/test.mp4'
 
 def MP4_I():
     if have_recieved[0] == 0: return None
     have_recieved[0] = 0
-    mp4_file = open(filename, 'rb')
+    mp4_file = open(gen_test.filename, 'rb')
     mp4_binary_data = mp4_file.read()
     base64_encoded = base64.b64encode(mp4_binary_data)
     base64_string = base64_encoded.decode('utf-8')
