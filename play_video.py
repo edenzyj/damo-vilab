@@ -14,14 +14,12 @@ def base64_to_mp4(base64_string):
     except Exception as e:
         print(f"An error occurred: {e}")
         print(f"video_path={video_path}")
-
     return  video_path
-
 
 
 # 播放影片 
 def play_video(base64_string):
-    # 使用subprocess运行mpv命令
+    # 使用subprocess運行mpv命令
     try:
         video_path=base64_to_mp4(base64_string)
         subprocess.run(["mpv", video_path])
@@ -29,7 +27,3 @@ def play_video(base64_string):
 
     except Exception as e:
         print(f"Error: {e}")  
-
-
-
-#play_video(base64_string)
