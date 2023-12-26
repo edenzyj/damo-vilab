@@ -8,21 +8,19 @@ MQTT_encryption = True
 MQTT_User = 'iottalk'
 MQTT_PW = 'iottalk2023'
 
-device_model = 'Music_to_video'
+device_model = 'Music_to_Video'
 IDF_list = ['MP4_I']
 ODF_list = ['Sentence_O']
-device_id = '31283301712230428 ' #if None, device_id = MAC address
-device_name = 'eden_device'
+device_id = '31283301712261325' #if None, device_id = MAC address
+device_name = 'gen_video'
 exec_interval = 1  # IDF/ODF interval
 
 def on_register(r):
     print('Server: {}\nDevice name: {}\nRegister successfully.'.format(r['server'], r['d_name']))
 
-have_recieved = [0]
-
 def MP4_I():
-    if have_recieved[0] == 0: return None
-    have_recieved[0] = 0
+    if gen_test.success_gen[0] == 0: return None
+    gen_test.success_gen[0] = 0
     mp4_file = open(gen_test.filename, 'rb')
     mp4_binary_data = mp4_file.read()
     base64_encoded = base64.b64encode(mp4_binary_data)
@@ -30,5 +28,4 @@ def MP4_I():
     return base64_string
 
 def Sentence_O(data:list):
-    have_recieved[0] = 1
     gen_test.gen_video(data)

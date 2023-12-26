@@ -4,4 +4,3 @@ accelerate
 torch
 requests
 paho-mqtt
-base64
