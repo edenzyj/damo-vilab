@@ -1,6 +1,5 @@
 import gen_test
 import base64
-from  play_video import *
 
 ServerURL = 'https://class.iottalk.tw' #For example: 'https://iottalk.tw'
 MQTT_broker = 'class.iottalk.tw' # MQTT Broker address, for example:  'iottalk.tw' or None = no MQTT support
