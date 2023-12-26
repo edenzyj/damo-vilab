@@ -28,13 +28,5 @@ def MP4_I():
     base64_string = base64_encoded.decode('utf-8')
     return base64_string
 
-def MP4_O(data:list):
-    print("len of data) =",len(data[0])) 
-    if len(data[0]) > 0:
-        play_video(data[0])
-    else:
-        print("error")
-
-
 def Sentence_O(data:list):
     gen_test.gen_video(data)
