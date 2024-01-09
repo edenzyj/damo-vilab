@@ -25,4 +25,4 @@ def gen_video(prompt):
     success_gen[0] = 1
     return
 
-gen_video("Two man are dancing popping in a garden.")
+# gen_video("Two man are dancing popping in a garden.")
